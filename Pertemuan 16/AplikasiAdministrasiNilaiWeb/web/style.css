@@ -1,0 +1,486 @@
+/* Pengaturan Dasar & Font */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f3f4f6;
+    margin: 0;
+    padding: 20px;
+    color: #1f2937;
+    display: flex;
+    justify-content: center;
+}
+
+/* Pembungkus Utama (Efek Kotak Melayang) */
+.app-container {
+    width: 90%;
+    max-width: 1200px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Header */
+.app-header {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    color: #ffffff;
+    padding: 30px;
+    text-align: center;
+}
+.app-header h2 { margin: 0; font-size: 16px; font-weight: 400; text-transform: uppercase; letter-spacing: 2px; opacity: 0.9; }
+.app-header h1 { margin: 5px 0; font-size: 28px; font-weight: 600; }
+.app-header p { margin: 5px 0 0 0; font-size: 13px; opacity: 0.8; }
+
+/* Tata Letak Konten Tengah */
+.main-layout {
+    display: flex;
+    min-height: 450px;
+    background-color: #ffffff;
+}
+
+/* Sidebar Kiri */
+.sidebar {
+    width: 240px;
+    background-color: #f8fafc;
+    border-right: 1px solid #e2e8f0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.menu-section {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #94a3b8;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+    letter-spacing: 1px;
+}
+.menu-link {
+    display: block;
+    padding: 10px 14px;
+    color: #475569;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+.menu-link:hover {
+    background-color: #e2e8f0;
+    color: #1e3a8a;
+    padding-left: 18px;
+}
+.login-btn {
+    background-color: #ef4444;
+    color: white;
+    text-align: center;
+}
+.login-btn:hover {
+    background-color: #dc2626;
+    color: white;
+}
+
+/* Area Konten Kanan */
+.content-area {
+    flex: 1;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Navbar Atas */
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f5f9;
+    border-radius: 8px;
+    display: inline-table;
+    position: relative;
+}
+.navbar ul:after { content: ""; clear: both; display: block; }
+.navbar ul li { float: left; position: relative; }
+.navbar ul li a { display: block; padding: 10px 20px; color: #334155; text-decoration: none; font-size: 14px; font-weight: 500; }
+.navbar ul li:hover { background-color: #e2e8f0; border-radius: 8px; }
+.navbar ul li:hover > a { color: #1e3a8a; }
+
+/* Dropdown Menu Atas */
+.navbar ul ul { display: none; position: absolute; top: 100%; left: 0; background-color: #ffffff; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); border-radius: 8px; min-width: 160px; padding: 5px 0; z-index: 10; }
+.navbar ul li:hover > ul { display: block; }
+.navbar ul ul li { float: none; }
+.navbar ul ul li a { padding: 10px 15px; color: #475569; }
+.navbar ul ul li a:hover { background-color: #f1f5f9; color: #1e3a8a; }
+
+/* Isi Card Utama */
+.card-body {
+    flex: 1;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+}
+.card-body h1 { color: #1e3a8a; margin: 0 0 10px 0; font-size: 24px; }
+.sub-konten { color: #64748b; font-size: 14px; margin: 0; }
+.user-badge { display: inline-block; background-color: #dcfce7; color: #166534; padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 500; margin-top: 15px; }
+
+/* Footer */
+.app-footer {
+    background-color: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    padding: 20px;
+    text-align: center;
+}
+.app-footer p { margin: 3px 0; font-size: 12px; color: #94a3b8; }
+
+/* ==========================================================================
+   DESAIN LAYOUT UTAMA (Sidebar Berubah Menjadi Tata Letak Samping yang Rapi)
+   ========================================================================== */
+
+/* Opsional: Membuat container utama membagi sidebar dan konten dengan rapi */
+.main-wrapper {
+    display: table;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Mengubah daftar menu menjadi Sidebar Vertikal yang Elegan */
+.sidebar-navigation {
+    display: table-cell;
+    width: 240px;
+    vertical-align: top;
+    background-color: #ffffff;
+    border-right: 1px solid #e2e8f0;
+    padding-right: 15px;
+}
+
+.content-body {
+    display: table-cell;
+    vertical-align: top;
+    padding-left: 25px;
+}
+
+/* Style Judul Kategori Menu (Master Data, Transaksi, Laporan) */
+.menu-category {
+    font-size: 13px;
+    font-weight: 700;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    padding-left: 10px;
+}
+
+.menu-category:first-child {
+    margin-top: 5px;
+}
+
+/* Style List Menu Utama */
+.nav-menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Style Link Menu */
+.nav-menu-item a {
+    display: block;
+    padding: 10px 14px;
+    color: #475569;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    margin-bottom: 4px;
+}
+
+/* Efek Hover (Saat Kursor Diarahkan) */
+.nav-menu-item a:hover {
+    background-color: #f1f5f9;
+    color: #1e40af; /* Biru khas Universitas Pamulang */
+    padding-left: 18px; /* Efek bergeser sedikit */
+}
+
+/* Style Khusus Tombol Logout agar Terlihat Jelas */
+.logout-item a {
+    color: #dc2626;
+    margin-top: 15px;
+    border: 1px dashed #fca5a5;
+    background-color: #fef2f2;
+    text-align: center;
+}
+
+.logout-item a:hover {
+    background-color: #fee2e2;
+    color: #b91c1c;
+    padding-left: 14px;
+}
+
+/* ==========================================================================
+   DESAIN SIDEBAR MENU SOLID & MODERN
+   ========================================================================== */
+
+/* Container Utama Sidebar */
+.sidebar {
+    background-color: #f8fafc; /* Latar belakang abu-abu sangat muda */
+    padding: 24px 16px;
+    border-right: 1px solid #e2e8f0;
+}
+
+/* Judul Kategori Menu (Master Data, Transaksi, dll) */
+.sidebar-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 24px;
+    margin-bottom: 8px;
+    padding-left: 4px;
+}
+.sidebar-title:first-of-type {
+    margin-top: 0;
+}
+
+/* List Group */
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-item {
+    margin-bottom: 6px;
+}
+
+/* Style Kotak Menu Utama (Solid Feel) */
+.sidebar-item a {
+    display: block;
+    padding: 11px 16px;
+    color: #334155;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    background-color: #ffffff; /* Kotak putih solid */
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+    transition: all 0.2s ease;
+}
+
+/* Efek Hover (Saat Kursor Diatas Menu) */
+.sidebar-item a:hover {
+    background-color: #eff6ff; /* Biru muda transparan */
+    color: #1e40af; /* Biru khas Unpam */
+    border-color: #bfdbfe;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* Khusus Menu yang Sedang Aktif (Opsional jika ingin dipakai) */
+.sidebar-item.active a {
+    background-color: #1e40af;
+    color: #ffffff;
+    border-color: #1e40af;
+}
+
+/* Desain Solid Khusus Tombol Logout */
+.sidebar-item.logout-menu a {
+    background-color: #fef2f2; /* Merah muda solid */
+    color: #dc2626;
+    border-color: #fee2e2;
+}
+.sidebar-item.logout-menu a:hover {
+    background-color: #fee2e2;
+    border-color: #fca5a5;
+    color: #991b1b;
+}
+
+/* ==========================================================================
+   DESAIN SIDEBAR MENU SOLID & MODERN
+   ========================================================================== */
+
+/* Container Utama Sidebar */
+.sidebar {
+    background-color: #f8fafc; /* Latar belakang abu-abu sangat muda */
+    padding: 24px 16px;
+    border-right: 1px solid #e2e8f0;
+}
+
+/* Judul Kategori Menu (Master Data, Transaksi, dll) */
+.sidebar-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 24px;
+    margin-bottom: 8px;
+    padding-left: 4px;
+}
+.sidebar-title:first-of-type {
+    margin-top: 0;
+}
+
+/* List Group */
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-item {
+    margin-bottom: 6px;
+}
+
+/* Style Kotak Menu Utama (Solid Feel) */
+.sidebar-item a {
+    display: block;
+    padding: 11px 16px;
+    color: #334155;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    background-color: #ffffff; /* Kotak putih solid */
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+    transition: all 0.2s ease;
+}
+
+/* Efek Hover (Saat Kursor Diatas Menu) */
+.sidebar-item a:hover {
+    background-color: #eff6ff; /* Biru muda transparan */
+    color: #1e40af; /* Biru khas Unpam */
+    border-color: #bfdbfe;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* Khusus Menu yang Sedang Aktif (Opsional jika ingin dipakai) */
+.sidebar-item.active a {
+    background-color: #1e40af;
+    color: #ffffff;
+    border-color: #1e40af;
+}
+
+/* Desain Solid Khusus Tombol Logout */
+.sidebar-item.logout-menu a {
+    background-color: #fef2f2; /* Merah muda solid */
+    color: #dc2626;
+    border-color: #fee2e2;
+}
+.sidebar-item.logout-menu a:hover {
+    background-color: #fee2e2;
+    border-color: #fca5a5;
+    color: #991b1b;
+}
+/* ==========================================================================
+   DESAIN TABEL & LAYOUT KONTEN MODERN (SEPERTI DATA MAHASISWA)
+   ========================================================================== */
+
+/* Header Halaman Luar Card */
+.page-header {
+    margin-bottom: 24px;
+}
+
+.page-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 6px 0;
+}
+
+.page-description {
+    font-size: 14px;
+    color: #64748b;
+    margin: 0;
+}
+
+/* Container Card Putih Utama */
+.modern-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+/* Header Komponen di dalam Card */
+.card-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.card-subtitle {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #334155;
+}
+
+/* Tombol Cetak PDF Merah Solid */
+.btn-pdf {
+    background-color: #ef4444;
+    color: #ffffff;
+    padding: 10px 18px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.btn-pdf:hover {
+    background-color: #dc2626;
+}
+
+/* Desain Tabel Data Kompak */
+.modern-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 14px;
+}
+
+.modern-table thead tr {
+    background-color: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.modern-table th {
+    padding: 14px 16px;
+    font-weight: 600;
+    color: #64748b;
+}
+
+.modern-table td {
+    padding: 16px;
+    color: #334155;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: middle;
+}
+
+/* Efek baris saat dilewati kursor */
+.modern-table tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+/* Style Badge Nilai Huruf (Grade) */
+.grade-badge-green {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 12px;
+    background-color: #dcfce7;
+    color: #15803d;
+}
