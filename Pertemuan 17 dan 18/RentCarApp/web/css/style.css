@@ -1,0 +1,158 @@
+/* --- CYBERDRIVE ULTRA-DARK NEON THEME --- */
+body {
+    background-color: #080C14 !important;
+    color: #E2E8F0 !important;
+    font-family: 'Segoe UI', Roboto, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Memaksa Halaman Membuka Grid Sempurna Walau Bootstrap Macet */
+.container-fluid {
+    display: flex !important;
+    min-height: 100vh;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.row {
+    display: flex !important;
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+/* Sidebar - Pitch Black dengan Border Neon */
+.sidebar {
+    width: 240px !important;
+    background-color: #04060A !important; 
+    border-right: 2px solid #00F2FE !important; /* Garis Neon Cyan */
+    padding: 25px 20px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.sidebar .brand-title {
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 1.5rem;
+    text-shadow: 0 0 10px rgba(0, 242, 254, 0.6);
+    text-align: center;
+    margin-bottom: 30px;
+}
+.sidebar .brand-title span {
+    color: #D946EF; /* Magenta */
+    text-shadow: 0 0 10px rgba(217, 70, 239, 0.6);
+}
+.sidebar .nav-link {
+    color: #94A3B8 !important;
+    text-decoration: none;
+    display: block;
+    padding: 14px 16px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+.sidebar .nav-link:hover, .sidebar .nav-link.active {
+    background: linear-gradient(90deg, rgba(0, 242, 254, 0.15), transparent);
+    color: #00F2FE !important;
+    border-left: 4px solid #00F2FE;
+}
+.sidebar .nav-link.active {
+    background: linear-gradient(90deg, rgba(0, 242, 254, 0.25), transparent) !important;
+    color: #ffffff !important;
+    text-shadow: 0 0 5px #00F2FE;
+}
+
+/* Area Konten Utama */
+.main-content { 
+    flex: 1 !important;
+    padding: 40px !important; 
+    background-color: #080C14 !important;
+}
+.section-title { 
+    font-weight: 800; 
+    color: #ffffff; 
+    text-shadow: 0 0 8px rgba(255,255,255,0.2);
+}
+
+/* Card / Kotak - Deep Carbon dengan Efek Glow */
+.card-custom, .card {
+    background-color: #0F1626 !important;
+    border: 1px solid #1E293B !important;
+    border-radius: 14px !important;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Modifikasi Input Form Bergaya Sci-Fi */
+.form-control, .form-select {
+    background-color: #050911 !important;
+    border: 1px solid #1E293B !important; 
+    color: #ffffff !important;
+    padding: 12px 16px; 
+    border-radius: 10px;
+}
+.form-control:focus, .form-select:focus {
+    border-color: #00F2FE !important;
+    box-shadow: 0 0 10px rgba(0, 242, 254, 0.3) !important;
+}
+
+/* Tabel - Dark Matrix */
+.table-responsive-custom {
+    background-color: #0F1626;
+    border: 1px solid #1E293B;
+    border-radius: 14px;
+    overflow: hidden;
+}
+.table-custom {
+    width: 100%;
+    border-collapse: collapse;
+}
+.table-custom thead th {
+    background-color: #04060A;
+    color: #00F2FE;
+    padding: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #1E293B;
+}
+.table-custom tbody td { 
+    padding: 18px; 
+    font-size: 14px; 
+    color: #CBD5E1;
+    border-bottom: 1px solid #1E293B; 
+}
+.table-custom tbody tr:hover {
+    background-color: rgba(255,255,255,0.02);
+}
+
+/* TOMBOL CYBER NEON GLOW */
+.btn-cyber-cyan {
+    background: linear-gradient(135deg, #00F2FE, #4FACFE) !important;
+    color: #04060A !important;
+    border: none !important;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
+}
+.btn-cyber-cyan:hover {
+    box-shadow: 0 0 25px rgba(0, 242, 254, 0.8);
+    transform: translateY(-1px);
+}
+
+.btn-cyber-magenta {
+    background: linear-gradient(135deg, #F43F5E, #D946EF) !important;
+    color: #ffffff !important;
+    border: none !important;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(217, 70, 239, 0.4);
+}
+.btn-cyber-magenta:hover {
+    box-shadow: 0 0 25px rgba(217, 70, 239, 0.8);
+    transform: translateY(-1px);
+}
